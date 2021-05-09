@@ -1,0 +1,12 @@
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\bin\Debug\Repository.dll.config
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\bin\Debug\Repository.dll
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\bin\Debug\Repository.pdb
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\bin\Debug\EntityFramework.dll
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\bin\Debug\EntityFramework.xml
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\obj\Debug\Repository.csproj.CopyComplete
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\obj\Debug\Repository.dll
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\obj\Debug\Repository.pdb
+C:\Users\Atul\source\repos\InvotoryAPI\Repository\obj\Debug\Repository.csprojAssemblyReference.cache

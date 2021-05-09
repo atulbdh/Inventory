@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Inventory_DBModelStoreContainer" CdmEntityContainer="Inventory_DBEntities">
+    <EntitySetMapping Name="Item_Master">
+      <EntityTypeMapping TypeName="Inventory_DBModel.Item_Master">
+        <MappingFragment StoreEntitySet="Item_Master">
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Add_By" ColumnName="Add_By" />
+          <ScalarProperty Name="Add_Date" ColumnName="Add_Date" />
+          <ScalarProperty Name="Edit_By" ColumnName="Edit_By" />
+          <ScalarProperty Name="Edit_Date" ColumnName="Edit_Date" />
+          <ScalarProperty Name="Delete_By" ColumnName="Delete_By" />
+          <ScalarProperty Name="Delete_Date" ColumnName="Delete_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_Del_Item" FunctionName="Inventory_DBModel.Store.USP_Del_Item" />
+    <FunctionImportMapping FunctionImportName="USP_Get_Item" FunctionName="Inventory_DBModel.Store.USP_Get_Item">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Inventory_DBModel.USP_Get_Item_Result">
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_Ins_Item" FunctionName="Inventory_DBModel.Store.USP_Ins_Item" />
+  </EntityContainerMapping>
+</Mapping>

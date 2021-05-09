@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Inventory_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Item_Master">
+    <Key>
+      <PropertyRef Name="Item_ID" />
+    </Key>
+    <Property Name="Item_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Add_By" Type="int" />
+    <Property Name="Add_Date" Type="datetime" />
+    <Property Name="Edit_By" Type="int" />
+    <Property Name="Edit_Date" Type="datetime" />
+    <Property Name="Delete_By" Type="int" />
+    <Property Name="Delete_Date" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <Function Name="USP_Del_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Item_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_Get_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Item_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_Ins_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Item_ID" Type="int" Mode="In" />
+    <Parameter Name="Item_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Price" Type="decimal" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="Add_By" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="Inventory_DBModelStoreContainer">
+    <EntitySet Name="Item_Master" EntityType="Self.Item_Master" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Inventory_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Item_Master">
+    <Key>
+      <PropertyRef Name="Item_ID" />
+    </Key>
+    <Property Name="Item_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Add_By" Type="Int32" />
+    <Property Name="Add_Date" Type="DateTime" Precision="3" />
+    <Property Name="Edit_By" Type="Int32" />
+    <Property Name="Edit_Date" Type="DateTime" Precision="3" />
+    <Property Name="Delete_By" Type="Int32" />
+    <Property Name="Delete_Date" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="Inventory_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Item_Master" EntityType="Self.Item_Master" />
+    <FunctionImport Name="USP_Del_Item" ReturnType="Collection(String)">
+      <Parameter Name="Item_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_Get_Item" ReturnType="Collection(Inventory_DBModel.USP_Get_Item_Result)">
+      <Parameter Name="Item_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_Ins_Item" ReturnType="Collection(String)">
+      <Parameter Name="Item_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Item_Name" Mode="In" Type="String" />
+      <Parameter Name="Price" Mode="In" Type="Decimal" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Add_By" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="USP_Get_Item_Result">
+    <Property Type="Int32" Name="Item_ID" Nullable="false" />
+    <Property Type="String" Name="Item_Name" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+  </ComplexType>
+</Schema>
